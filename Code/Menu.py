@@ -302,7 +302,7 @@ class Menu:
                                 num = self.answer.get_data()
                                 if num == 1:
                                     print("Se ha realizado exitosamente la compra")
-                                    print("Objeto: {}, Subtotal: {}, Descuento: {}, IVA: {}")
+                                    print("Objeto: {}, Subtotal: {}, Descuento: {}, IVA: {}".format(item[0], item[1], Discount, IVA))
                                     self.user.add_item(item)
                                     break
                                 elif num == 2:
