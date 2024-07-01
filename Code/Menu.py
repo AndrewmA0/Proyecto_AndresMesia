@@ -240,7 +240,7 @@ class Menu:
                 self.game.get_stadium().show_restaurants()
                 self.answer.ValidNumber()
                 num = self.answer.get_data()
-                if self.game.get_stadium().check_valid_restaurant(num) is False:
+                if self.game.get_stadium().check_valid_restaurant(num - 1) is False:
                     print("Restaurante inválido")
                     continue
                 else:
