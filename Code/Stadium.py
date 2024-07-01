@@ -73,7 +73,7 @@ class Stadium:
             price_range = 10000
 
         for item in restaurant["products"]:
-            if int(item["price"]) < price_range:
+            if float(item["price"]) < price_range:
                 print(item["name"] + " " + item["price"] + " " + item["adicional"])
 
     def check_valid_restaurant(self, index):
