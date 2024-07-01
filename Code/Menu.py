@@ -1,9 +1,12 @@
+import matplotlib.pyplot
 import InputValidator
 import DataManager
 import Team
 import Game
 import Stadium
 import User
+import matplotlib
+import numpy
 
 class Menu:
     def __init__(self) -> None:
@@ -240,11 +243,11 @@ class Menu:
                 self.game.get_stadium().show_restaurants()
                 self.answer.ValidNumber()
                 num = self.answer.get_data()
-                if self.game.get_stadium().check_valid_restaurant(num - 1) is False:
+                if self.game.get_stadium().check_valid_restaurant(num) is False:
                     print("Restaurante inválido")
                     continue
                 else:
-                    index_restaurant = num
+                    index_restaurant = num - 1
                     print("""¿Que objetos desea ver?
 1. Por nombre
 2. Por rango de precio
@@ -346,12 +349,21 @@ class Menu:
                 print("El juego con más entradas vendidas fue {} con {}".format(max_game[0], max_game[1]))
             elif num == 5:
                 most_sold = self.data.most_sold_products()
+                x = numpy.array([most_sold[0][0], most_sold[1][0], most_sold[2][0]])
+                y = numpy.array([most_sold[0][1], most_sold[1][1], most_sold[2][1]])
                 print("Los 3 productos mas vendidos son {}, con {}, {}, con {}, y {}, con {}".format(most_sold[0][0], most_sold[0][1], most_sold[1][0], most_sold[1][1], most_sold[2][0], most_sold[2][1]))
+                matplotlib.pyplot.bar(x,y)
+                matplotlib.pyplot.show()
             elif num == 6:
                 most_sold = self.data.most_sold_client()
+                x = numpy.array([str(most_sold[0][0]), str(most_sold[1][0]), str(most_sold[2][0])])
+                y = numpy.array([most_sold[0][1], most_sold[1][1], most_sold[2][1]])
                 print("Los 3 clientes que mas entradas compraron son {}, con {}, {}, con {}, y {}, con {}".format(most_sold[0][0], most_sold[0][1], most_sold[1][0], most_sold[1][1], most_sold[2][0], most_sold[2][1]))
+                matplotlib.pyplot.bar(x,y)
+                matplotlib.pyplot.show()
             elif num == 7:
                 break
             else:
                 print("Opción inválida")
+        
         
