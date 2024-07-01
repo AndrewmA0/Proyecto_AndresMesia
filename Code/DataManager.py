@@ -46,7 +46,7 @@ class DataManager:
             file.read_document_local(self.filepaths[5])
             info_to_parse = file.get_info()
             for id in info_to_parse:
-                self.user_dict[id] = User.User(info_to_parse[id]["name"], info_to_parse[id]["cedula"], info_to_parse[id]["age"], info_to_parse[id]["ticket"], info_to_parse[id]["bought_items"])
+                self.user_dict[int(id)] = User.User(info_to_parse[id]["name"], info_to_parse[id]["cedula"], info_to_parse[id]["age"], info_to_parse[id]["ticket"], info_to_parse[id]["bought_items"])
         except:
             self.load_data_online()
 
