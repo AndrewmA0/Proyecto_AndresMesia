@@ -155,7 +155,7 @@ class DataManager:
     def show_all_games(self):
         i = 1
         for game in self.game_dict.values():
-            print(str(i) + game.show())
+            print(str(i) + " " + game.show())
             i += 1
 
     def get_games_from_ticket(self, user: User.User):
