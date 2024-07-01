@@ -38,7 +38,7 @@ class Stadium:
         restaurant = self.restaurants[index_restaurant]
         i = 1
         for product in restaurant["products"]:
-            print(str(i) + product["name"] + " " + product["price"] + " " + product["adicional"])
+            print(str(i) + " " + product["name"] + " " + product["price"] + " " + product["adicional"])
             i += 1
 
     def show_product_by_type(self, index_restaurant, index_type):
