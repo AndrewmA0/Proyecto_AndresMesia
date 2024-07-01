@@ -29,7 +29,7 @@ class Stadium:
         for restaurant in self.restaurants:
             name = restaurant["name"]
             products = restaurant["products"]
-            print(str(i) + name)
+             print(str(i) + " " + name)
             for product in products:
                 print(product["name"] + " " + product["price"] + " " + product["adicional"])
             i += 1
